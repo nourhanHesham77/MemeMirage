@@ -6,9 +6,13 @@ async function getAllMemes(){
         data.forEach((meme) => {
             // console.log(meme.blank.example)
             $(".meme-container").append(`
-                <div class="meme">
+                <div class="meme" id=${meme.id}>
                     <img src="${meme.example.url}" alt="${meme.name}">
-                    <a><i class="fa-solid fa-circle-down"></i></a>
+                     <div class="meme-view">
+<a href="${meme.example.url}" download>
+            <i class="fas fa-circle-down"></i>
+        </a>
+          </div>
                 </div>`);
         });
     } else {
@@ -16,3 +20,10 @@ async function getAllMemes(){
     }
 }
 getAllMemes();
+
+$(".meme-container").on("click", ".meme", function () {
+    clear();
+    let id = $(this).attr("idIS");
+    console.log("Clicked on id:", id);
+    singleMeal(id);
+  })
