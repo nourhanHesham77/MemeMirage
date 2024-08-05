@@ -131,3 +131,18 @@ main .main-container img{
     
 }
 
+
+
+
+
+
+.contain-main{
+    margin-right: 10px;
+}
+.contain-divider img{
+    width: 90%;
+    height: 50%;
+}
+.contain-main img{
+    height: 100%;
+}
